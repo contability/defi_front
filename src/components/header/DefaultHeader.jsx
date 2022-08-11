@@ -10,7 +10,12 @@ import planet from "../../assets/planet.png";
 import connectWallet from "../../assets/connect_wallet.png";
 import I_metamask from "../../assets/metaMask.png";
 import SignOutPopup from "../popup/SignOutPopup";
-import { getInstallYn, getLocalStorage, getmyaddress, networkYn } from "../../util/common";
+import {
+  getInstallYn,
+  getLocalStorage,
+  getmyaddress,
+  networkYn,
+} from "../../util/common";
 import { getethrep, query_noarg } from "../../util/contract-calls";
 import { addresses } from "../../configs/addresses";
 import MessageAlert from "../common/MessageAlert";
@@ -42,7 +47,7 @@ export default function DefaultHeader({ opt, con }) {
 
     getTvl();
     setUserInfo();
-  },[]);
+  }, []);
 
   useEffect(() => {
     if (window.ethereum) {
@@ -167,7 +172,7 @@ export default function DefaultHeader({ opt, con }) {
             </button>
             <p className="nftnBox">
               <span className="s_nftn">NFTN</span>
-              <span className="l_nftn">BICOSWAP</span>
+              <span className="l_nftn">DEFI</span>
             </p>
           </div>
           {/* {spinner && <img src={I_spinnerPurple} alt="" ref={spinnerRef} />} */}
@@ -207,9 +212,7 @@ export default function DefaultHeader({ opt, con }) {
                   {walletIcon === 0 && (
                     <img className="metamaskIcon" src={I_metamask} alt="" />
                   )}
-                  <span>
-                    {address.substr(0, 10)}...
-                  </span>
+                  <span>{address.substr(0, 10)}...</span>
                 </button>
               ) : (
                 <button onClick={() => setConnectWalletPopup(true)}>
