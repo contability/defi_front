@@ -1,0 +1,22 @@
+const messages = {
+  MSG_ACCOUNT_CHANGED: "Account has been changed",
+  MSG_WALLET_DISCONNECTED: "Wallet has been disconnected",
+  MSG_PLEASELOGIN: "Please connect your wallet",
+  MSG_USER_DENIED_TX: "User denied transaction",
+  MSG_DONE_SENDING_TX_REQ: "Request has been sent",
+  MSG_CHAIN_ERR: "Chain error",
+  MSG_POOL_NOT_FOUND: "Pool not found",
+  MSG_PLEASE_SELECT_TOKEN: "Please select token",
+  MSG_BALANCE_NOT_ENOUGH: "Insufficient balance",
+  MSG_TX_FINALIZED: "Transaction is completed",
+  MSG_BID_SUCCESS: "Bid has been placed",
+  MSG_WORK_IN_PROGRESS: "Work in progress, will be coming soon",
+  MSG_NONT_CLAIMABLE: "None claimable",
+  MSG_NOT_ENOUGH_TOKEN_RESERVE: "Not enough token reserve",
+  MSG_NOT_SUBSCRIBED: "You are not subscribed to any incentive!",
+  MSG_ACCESS_AFTER_INSTALL: "Please access after installation",
+  MSG_EXCEEDS_ALLOWANCE: "exceeds allowance",
+  MSG_BALANCE_NOT_ENOUGH: "balance not enough",
+  MSG_NOT_METT_MIN_AMOUNT: "amount does not meet min amount",
+};
+export { messages };
