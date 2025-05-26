@@ -1,0 +1,47 @@
+name: Frontend Slack Notification
+
+on:
+  push:
+    branches: ["prod", "dev"]
+
+jobs:
+  frontend-notification:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{github.event.after}}
+      - name: Send Slack Notification
+        uses: 8398a7/action-slack@v3.16.2
+        with:
+          status: ${{ job.status }}
+          fields: repo,message,commit,author,eventName
+          color: ${{ github.ref == 'refs/heads/prod' && '#ff0000' || '#00ff00' }}
+          text: |
+            🌐 [FRONT-END ${{ github.ref == 'refs/heads/prod' && 'Production' || 'Development' }} Deploy] Repository: ${{github.repository}}
+            ${{github.event.commits[0].message}}
+            ${{github.event.commits[1].message}}
+            ${{github.event.commits[2].message}}
+            ${{github.event.commits[3].message}}
+            ${{github.event.commits[4].message}}
+            ${{github.event.commits[5].message}}
+            ${{github.event.commits[6].message}}
+            ${{github.event.commits[7].message}}
+            ${{github.event.commits[8].message}}
+            ${{github.event.commits[9].message}}
+            ${{github.event.commits[10].message}}
+            ${{github.event.commits[11].message}}
+            ${{github.event.commits[12].message}}
+            ${{github.event.commits[13].message}}
+            ${{github.event.commits[14].message}}
+            ${{github.event.commits[15].message}}
+            ${{github.event.commits[16].message}}
+            ${{github.event.commits[17].message}}
+            ${{github.event.commits[18].message}}
+            ${{github.event.commits[19].message}}
+            ${{github.event.commits[20].message}}
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        if: always()
